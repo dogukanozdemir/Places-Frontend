@@ -29,6 +29,19 @@ function App() {
           </div>
         </div>
       </form>
+      <div className="content-container">
+        <div className="list-container">
+          <h2>Places in Radius</h2>
+          <ul>
+            {sampleData.map((place, index) => (
+              <li>place.name</li>
+            ))}
+          </ul>
+        </div>
+        <div className="map-container">
+          <h2>Google Maps</h2>
+        </div>
+      </div>
     </div>
   );
 }
