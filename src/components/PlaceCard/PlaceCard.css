@@ -1,0 +1,27 @@
+.card {
+    text-align: center;
+    background-color: #555;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 3px;
+}
+
+.card h2 {
+    margin: 0;
+    padding: 12px 0;
+    background-color: #888;
+}
+
+.card h3 {
+    margin: 0;
+    padding: 12px 0;
+}
+
+.card:hover {
+    background-color: #666;
+}
+
+.place-detail {
+    display: flex;
+    justify-content: space-around;
+}
