@@ -1,16 +1,25 @@
-import './PlaceListContainer.css';
-import {PlaceCard} from '../PlaceCard/PlaceCard'
+import React from 'react';
+import "./PlaceListContainer.css";
+import { PlaceCard } from "../PlaceCard/PlaceCard";
 
-export function PlaceListContainer() {
-    return (
-        <div className='list-container'>
-            <h2>Places</h2>
-            <div className='card-list'>
-                <PlaceCard name="Pure Black Coffee" rating="4.7" type="Café"/>
-                <PlaceCard name="Pure Black Coffee" rating="4.7" type="Café"/>
-                <PlaceCard name="Pure Black Coffee" rating="4.7" type="Café"/>
-            
-            </div>
-        </div>
-    )
+export function PlaceListContainer({ placesData }) {
+  return (
+    <div className="list-container">
+      <h2>Places</h2>
+      <div className="card-list">
+        {placesData.length === 0 ? (
+          <h2>No Results</h2>
+        ) : (
+          placesData.map((place, index) => (
+            <PlaceCard
+              key={index}
+              name={place.name}
+              rating={place.rating}
+              type={place.type}
+            />
+          ))
+        )}
+      </div>
+    </div>
+  );
 }
