@@ -1,13 +1,12 @@
 import './PlaceCard.css';
 
-
-export function PlaceCard({name,rating,type,onClick}) {
+export function PlaceCard({ name, rating, type }) {
     return (
-        <div className='card' onClick={onClick}>
-            <h2>{name}</h2>
-            <div className='place-detail'>
-                <h3>{rating}</h3>
-                <h3>{type}</h3>
+        <div className="card">
+            <div className="card-content">
+                <h3 className="card-title"><b>{name}</b></h3>
+                <p className="card-rating"><b>Rating:</b> {rating}</p>
+                <p className="card-type"><b>Type:</b> {type}</p>
             </div>
         </div>
     );

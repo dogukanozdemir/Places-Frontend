@@ -1,0 +1,15 @@
+.list-container {
+    justify-content: center;
+    width: 75%;
+}
+
+.list-container h2 {
+    text-align: center;
+}
+
+.card-list {
+    max-height: 70vh;
+    height: fit-content;
+    overflow-y: auto;
+    border-radius: 5px;
+}

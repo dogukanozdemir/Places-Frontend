@@ -1,27 +1,35 @@
 .card {
-    text-align: center;
-    background-color: #555;
+    background-color: #555; 
+    color: #fff; 
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin: 10px;
+    transition: transform 0.2s;
     cursor: pointer;
-    font-size: 18px;
-    border-radius: 3px;
-}
-
-.card h2 {
-    margin: 0;
-    padding: 12px 0;
-    background-color: #888;
-}
-
-.card h3 {
-    margin: 0;
-    padding: 12px 0;
 }
 
 .card:hover {
-    background-color: #666;
+    background-color: #666; 
+    transform: scale(1.005); 
 }
 
-.place-detail {
-    display: flex;
-    justify-content: space-around;
+.card-content {
+    padding: 10px;
+}
+
+.card-title {
+    font-size: 24px;
+    margin: 0;
+    padding: 0;
+}
+
+.card-rating {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.card-type {
+    font-size: 16px;
+    margin: 5px 0;
 }

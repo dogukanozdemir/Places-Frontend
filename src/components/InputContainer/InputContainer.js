@@ -7,8 +7,8 @@ export function InputContainer() {
         <div className='input-container'>
             <Textbox header="Latitude:"/>
             <Textbox header="Longitude:"/>
-            <Textbox header="Radius"/>
-            <Button className="input-container-button" text="Search"/>
+            <Textbox header="Radius:"/>
+            <Button text="Search"/>
         </div>
     );
 }

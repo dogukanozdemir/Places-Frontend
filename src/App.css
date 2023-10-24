@@ -1,4 +1,8 @@
 .App {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
   color: #fff;
   font-family: Arial, sans-serif;
+  gap: 5vh;
 }
