@@ -1,20 +1,19 @@
-import React, { useEffect, useState } from 'react'; // Import useEffect and useState
+import React, { useContext} from "react";
 import "./MapContainer.css";
 import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
+import { PlacesContext } from "../../store/PlacesContext";
 
 const containerStyle = {
   width: "1000px",
   height: "600px",
 };
 
-export function MapContainer({ selectedLocation }) {
-  const [center, setCenter] = useState({ lat: -3.745, lng: -38.523 });
+export function MapContainer() {
 
-  useEffect(() => {
-    if (selectedLocation) {
-      setCenter({ lat: selectedLocation.latitude, lng: selectedLocation.longitude });
-    }
-  }, [selectedLocation]);
+  const [state] = useContext(PlacesContext);
+  const center = state.locate
+    ? { lat: state.locate.latitude, lng: state.locate.longitude }
+    : { lat: 41, lng: 29 };
 
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
@@ -24,7 +23,7 @@ export function MapContainer({ selectedLocation }) {
   return isLoaded ? (
     <div className="map-container">
       <h2>Location</h2>
-      <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={15}>
+      <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={16}>
         {center && <Marker position={center} />}
       </GoogleMap>
     </div>

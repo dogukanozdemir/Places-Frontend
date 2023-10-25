@@ -1,9 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./InputContainer.css";
 import { Button } from "../Button/Button";
 import { Textbox } from "../Textbox/Textbox";
+import { PlacesContext } from "../../store/PlacesContext";
 
-export function InputContainer({ onSearch }) {
+export function InputContainer() {
+
+  const [state, dispatch] = useContext(PlacesContext)
+
   const [formData, setFormData] = useState({
     latitude: "",
     longitude: "",
@@ -16,7 +20,10 @@ export function InputContainer({ onSearch }) {
   };
 
   const handleSearchClick = () => {
-    onSearch(formData);
+    dispatch({
+      type: 'search',
+      payload: formData 
+    })
   };
 
   return (
