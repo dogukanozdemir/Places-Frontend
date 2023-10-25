@@ -2,7 +2,8 @@ import React from 'react';
 import "./PlaceListContainer.css";
 import { PlaceCard } from "../PlaceCard/PlaceCard";
 
-export function PlaceListContainer({ placesData }) {
+export function PlaceListContainer({ placesData, onCardClick }) {
+
   return (
     <div className="list-container">
       <h2>Places</h2>
@@ -16,6 +17,7 @@ export function PlaceListContainer({ placesData }) {
               name={place.name}
               rating={place.rating}
               type={place.type}
+              onClick={() => onCardClick(place)}
             />
           ))
         )}
