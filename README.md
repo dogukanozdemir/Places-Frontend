@@ -1,70 +1,110 @@
-# Getting Started with Create React App
+# React Places App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the React Places App! This application allows you to search for places within a specific radius based on latitude and longitude coordinates and view the results on a map.
 
-## Available Scripts
+if you want you can test the live version here: [Live demo](https://places.dogukanozdemir.com)
 
-In the project directory, you can run:
+You can check my repository called `Places-Backend` to see the server side
 
-### `npm start`
+## Table of Contents
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Introduction
+- Features
+- Getting Started
+  - Prerequisites
+  - Installation
+- Usage
+  - Search for Places
+  - View Results
+  - Locate on Map
+- API
+- License
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Introduction
 
-### `npm test`
+The React Places App is a simple web application built with React. It utilizes the [React Query](https://react-query.tanstack.com/) library for data fetching and state management. This app allows you to search for nearby places within a specified radius based on latitude and longitude coordinates. You can view the results in a list format and locate a specific place on a map.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Features
 
-### `npm run build`
+- Search for places within a specified radius.
+- View search results in a list.
+- Locate a specific place on a map.
+- Error handling for API requests.
+- Responsive design for different screen sizes.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Getting Started
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Prerequisites
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Before you get started, make sure you have the following installed on your system:
 
-### `npm run eject`
+- [Node.js](https://nodejs.org/) (v14 or higher)
+- [npm](https://www.npmjs.com/) (v7 or higher)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Installation
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Clone the project and install the modules
+  ```bash
+  git clone https://github.com/dogukanozdemir/places-frontend.git
+  ```
+  
+  ```bash
+  cd places-frontend
+  
+  ```
+  
+  ```bash
+  npm install
+  ```
+2. Acquire a google cloud api key
+   
+   You need to have a valid google cloud api key to run and test this project locally
+   After you have acquired you api key, create `.env` file at the root directory and type the below:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   ```
+   REACT_APP_GOOGLE_MAPS_API_KEY=YOUR_API_KEY_HERE
+   ```
+3. Start the project
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+   ```bash
+   npm start
+   ```
 
-## Learn More
+   The app should run localy on `localhost:3000`
+   
+## Usage
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Search for Places
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Enter the desired latitude and longitude coordinates in the respective text fields.
+2. Specify the search radius in kilometers.
+3. Click the "Search" button to initiate the search.
 
-### Code Splitting
+### View Results
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- The search results will be displayed in a list format, showing the name, rating, and type of each place.
+- If there are no results or an error occurs during the search, appropriate messages will be displayed.
 
-### Analyzing the Bundle Size
+### Locate on Map
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Click on a place card in the list to locate the place on the map.
+- The place's name, rating, and type will be displayed on the map.
 
-### Making a Progressive Web App
+## API
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+The React Places App uses an external API to fetch nearby locations. The API endpoint is:
 
-### Advanced Configuration
+- [Nearby Locations API](https://placesapi.dogukanozdemir.com/api/nearby-locations)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+You can customize the API endpoint in the `getPlacesInRadius` function defined in the project to suit your needs.
 
-### Deployment
+```javascript
+const apiUrl = `https://placesapi.dogukanozdemir.com/api/nearby-locations?latitude=${latitude}&longitude=${longitude}&radius=${radius}`;
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-### `npm run build` fails to minify
+Thank you for using the React Places App! If you have any questions or encounter issues, please feel free to reach out to me.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Happy exploring! 🌍🗺️
