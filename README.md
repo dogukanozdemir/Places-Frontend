@@ -2,8 +2,6 @@
 
 Welcome to the React Places App! This application allows you to search for places within a specific radius based on latitude and longitude coordinates and view the results on a map.
 
-if you want you can test the live version here: [Live demo](https://places.dogukanozdemir.com)
-
 You can check my repository called `Places-Backend` to see the server side
 
 ## Table of Contents
